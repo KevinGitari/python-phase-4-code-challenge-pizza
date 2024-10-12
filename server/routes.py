@@ -17,9 +17,9 @@ def _restaurant_routes(app):
         if not restaurant:
             return jsonify({"error": "Restaurant not found"}), 404
         return jsonify(restaurant.to_dict()), 200
-    
+
     @app.route("/restaurants/<int:id>", methods=["DELETE"])
-    
+
     def delete_restaurant(id):
         restaurant = Restaurant.query.get(id)
 
